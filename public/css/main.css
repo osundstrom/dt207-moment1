@@ -1,0 +1,20 @@
+
+
+/*----------------------------Navigering--------------------------------------*/
+.navNav {
+    margin-left: 5vw;
+    margin-top: 1vh;
+}
+
+.navUl a {
+    text-decoration: none;
+    font-style: none;
+}
+
+
+.navUl li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 2vw;
+}
+
