@@ -1,10 +1,32 @@
 
 
-
+//Express och sql
 const express = require("express");
 
-const app = express();
+const mysql = require("mysql");
 
+//Connect
+const connection = mysql.createConnection({
+    host: "localhost",
+    user: "OSund",
+    password: "password",
+    database: "OSund"
+});
+
+//Error eller success om connect eller inte
+connection.connect((err) => {
+    if (err) {
+        console.error("failed connection " + err);
+        return;
+    }
+    console.log("Success connection")
+});
+
+
+
+
+//---------------------------------------------------------------//
+const app = express();
 const port = 3000;
 
 app.set("view engine", "ejs"); //View engine ejs (html typ)
@@ -33,3 +55,6 @@ app.get("/about", (request, response) => {
 app.listen(port, () => {
     console.log("Server started")
 });
+
+
+
