@@ -8,9 +8,9 @@ const mysql = require("mysql");
 //Connect
 const connection = mysql.createConnection({
     host: "localhost",
-    user: "OSund",
-    password: "password",
-    database: "OSund"
+    user: "ogge",
+    password: "pass",
+    database: "ogge"
 });
 
 //Error eller success om connect eller inte
@@ -21,6 +21,12 @@ connection.connect((err) => {
     }
     console.log("Success connection")
 });
+
+
+//SQL
+
+
+
 
 
 
@@ -53,7 +59,7 @@ app.get("/about", (request, response) => {
 
 //Starta
 app.listen(port, () => {
-    console.log("Server started")
+    console.log("Server started on: " + port)
 });
 
 
