@@ -18,3 +18,29 @@
     margin-left: 2vw;
 }
 
+/*----------------------------Formulär--------------------------------------*/
+
+.divForm{
+    width: 100vw;
+    margin-top: 10vh;
+}
+
+.divForm form{
+    width:10vw;
+    display:block;
+    margin-left: 10vw;
+
+}
+
+.divForm input{
+    padding: 2%;
+    margin-top: 2%;
+}
+
+.divForm label{
+    padding: 2%;
+    margin-top: 2%;
+}
+
+
+/*----------------------------nästa--------------------------------------*/
