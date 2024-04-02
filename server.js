@@ -24,6 +24,11 @@ connection.connect((err) => {
 });
 
 
+
+//---------------------------------------------------------------//
+//---------------------------------------------------------------//
+
+
 //Ta bort table om de redan finns
 connection.query("DROP TABLE IF EXISTS kurser;", (err) => {
     if(err) throw err;
@@ -109,6 +114,7 @@ connection.query("INSERT INTO kurser(coursename, coursecode, syllabus, progressi
 
 
 //---------------------------------------------------------------//
+//---------------------------------------------------------------//
 
 
 //definerar app, port samt parse JSON
@@ -173,6 +179,11 @@ app.post("/deleteCourse", (request, response) => {
             response.redirect("/");//Laddar om så det uppderas dieekt
             });
     }});
+
+    
+
+//---------------------------------------------------------------//
+//---------------------------------------------------------------//
 
 
 
