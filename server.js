@@ -46,7 +46,55 @@ connection.query(`CREATE TABLE kurser (
 
 
     //Insert nytt
-connection.query("INSERT INTO kurser(coursename, coursecode, syllabus, progression) VALUES (?, ?, ?, ?)", ["Backend-baserad webbutveckling", "DT207G", "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/DT207G/", "B"], (err, results) => {
+connection.query("INSERT INTO kurser(coursename, coursecode, syllabus, progression) VALUES (?, ?, ?, ?)", ["Webbutveckling I", "DT057G", "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/DT057G/", "A"], (err, results) => {
+    if (err) {
+        console.error("Failed insert " + err);
+        return;
+    }
+    console.table( results );
+});
+
+connection.query("INSERT INTO kurser(coursename, coursecode, syllabus, progression) VALUES (?, ?, ?, ?)", ["Introduktion till programmering i JavaScript", "DT084G", "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/DT084G/", "A"], (err, results) => {
+    if (err) {
+        console.error("Failed insert " + err);
+        return;
+    }
+    console.table( results );
+});
+
+connection.query("INSERT INTO kurser(coursename, coursecode, syllabus, progression) VALUES (?, ?, ?, ?)", ["Grafisk teknik för webb", "DT200G", "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/DT200G/", "A"], (err, results) => {
+    if (err) {
+        console.error("Failed insert " + err);
+        return;
+    }
+    console.table( results );
+});
+
+connection.query("INSERT INTO kurser(coursename, coursecode, syllabus, progression) VALUES (?, ?, ?, ?)", ["Webbanvändbarhet", "DT068G", "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/DT068G/", "B"], (err, results) => {
+    if (err) {
+        console.error("Failed insert " + err);
+        return;
+    }
+    console.table( results );
+});
+
+connection.query("INSERT INTO kurser(coursename, coursecode, syllabus, progression) VALUES (?, ?, ?, ?)", ["Databaser", "DT003G", "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/DT003G/", "A"], (err, results) => {
+    if (err) {
+        console.error("Failed insert " + err);
+        return;
+    }
+    console.table( results );
+});
+
+connection.query("INSERT INTO kurser(coursename, coursecode, syllabus, progression) VALUES (?, ?, ?, ?)", ["Frontend-baserad webbutveckling", "DT211G", "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/DT211G/", "B"], (err, results) => {
+    if (err) {
+        console.error("Failed insert " + err);
+        return;
+    }
+    console.table( results );
+});
+
+connection.query("INSERT INTO kurser(coursename, coursecode, syllabus, progression) VALUES (?, ?, ?, ?)", ["Backend-baserad webbutveckling (Pågående)", "DT207G", "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/DT207G/", "B"], (err, results) => {
     if (err) {
         console.error("Failed insert " + err);
         return;
@@ -86,9 +134,13 @@ app.post("/addCourse", (request, response) => {
         app.get("/addCourse", (request, response) => {
             connection.query("SELECT * FROM kurser", (rows) => {
                 response.render("addCourse", {courses: rows});
-                console.log(connection.query)
+                
             });
-})})}});
+            
+})})}
+
+response.redirect("/addCourse"); //Uppdaterar så listan uppdateras.
+});
 
 
 
