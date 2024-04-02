@@ -29,6 +29,14 @@
                 <li>Länk: <a href="<%= course.syllabus %>">Kursplan</a></li> <hr>
             
                 <li>Progression: <%= course.progression %></li> <hr>
+
+                <br>
+                <li>
+                    <form action="/deleteCourse" method="POST">
+                       
+                        <button type="submit" id="id" name="id" value="<%= course.id %>">Radera</button>
+                    </form>
+                </li>
             </ul>
         <% }); %>
     </div>

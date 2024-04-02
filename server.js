@@ -146,6 +146,26 @@ response.redirect("/addCourse"); //Uppdaterar så listan uppdateras.
 
 
 
+app.post("/deleteCourse", (request, response) => {
+
+    const id = request.body.id;
+
+
+    if (id) {
+        connection.query("DELETE FROM kurser WHERE id = ?", [id], (err) => {
+            if (err) {
+                console.error("not deleted " + err);
+                return;
+            }
+
+            
+            response.redirect("/");
+            });
+    }});
+
+
+
+
 //Route
 
 app.get("/", (request, response) => {
