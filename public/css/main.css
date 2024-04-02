@@ -44,3 +44,20 @@
 
 
 /*----------------------------nästa--------------------------------------*/
+
+.courseList li {
+    list-style: none;
+    display: block;
+    font-weight: 700;
+}
+
+.courseList ul {
+    border: 1px solid black;
+    margin: auto;
+    width: 80vw;
+    padding: 1%;
+}
+
+.courseList h1{
+    margin-left: 10vw;
+}
