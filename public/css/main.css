@@ -58,6 +58,11 @@ body{
     display: block;
 }
 
+.submitInput:hover{
+    background-color: rgb(218, 255, 218);
+    text-decoration: underline;
+}
+
 #progression{
     margin-top: 1vh;
     width: 100px;
@@ -102,9 +107,36 @@ body{
     width: 10vw;
 }
 
+#id:hover{
+    background-color: rgb(250, 113, 113);
+    text-decoration: underline;
+}
+
 /*----------------------------omsida--------------------------------------*/
 
 .divAbout h1{
-    margin-left: 10vw;
     text-decoration: underline;
+}
+
+.divAbout {
+    margin-left: 10vw;
+    width: 45vw;
+    background-color: aliceblue;
+    padding-left: 1%;
+    padding-right: 1%;
+    border-radius: 10px;
+    margin-top: 5vh;
+    padding-bottom: 1%;
+}
+
+.divAbout p{
+    margin-top: -1vh;
+}
+
+
+@media (max-width: 1024px) {
+    .divAbout {
+        margin-left: 5vw; 
+        width: 80vw;
+    }
 }
