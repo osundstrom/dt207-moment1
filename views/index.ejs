@@ -9,7 +9,6 @@
     <title>Moment 1 -  Kurser</title>
 </head>
 <body>
-    <h1>Kurser</h1>
     <nav class="navNav">
         <ul class="navUl">
             <li><a href="/" class="currentPage">Startsida </a></li>
@@ -17,5 +16,22 @@
             <li><a href="/about" >Om sidan</a></li>
         </ul>
     </nav>
+
+    <div class="courseList">
+        <h1>Kurser</h1>
+        <% courses.forEach(course => { %>
+            <ul>
+                <hr>
+                <li>Kursnamn: <%= course.coursename %></li> <hr>
+                
+                <li>Kurskod: <%= course.coursecode %></li> <hr>
+                
+                <li>Länk: <a href="<%= course.syllabus %>">Kursplan</a></li> <hr>
+            
+                <li>Progression: <%= course.progression %></li> <hr>
+            </ul>
+        <% }); %>
+    </div>
+
 </body>
 </html>

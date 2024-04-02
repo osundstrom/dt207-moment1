@@ -131,7 +131,7 @@ app.post("/addCourse", (request, response) => {
         }
         
 
-        app.get("/addCourse", (request, response) => {
+        app.get("/index", (request, response) => {
             connection.query("SELECT * FROM kurser", (rows) => {
                 response.render("addCourse", {courses: rows});
                 
@@ -149,21 +149,20 @@ response.redirect("/addCourse"); //Uppdaterar så listan uppdateras.
 //Route
 
 app.get("/", (request, response) => {
-    response.render("index");
-
-});
-
-app.get("/addCourse", (request, response) => {
     connection.query("SELECT * FROM kurser", (err, rows) => {
         if (err) {
             console.log("failed: " + err );
         }
-        response.render("addCourse", {courses: rows});
+        response.render("index", {courses: rows});
         console.log(rows);
     });
 
-
 });
+
+app.get("/addCourse", (request, response) => {
+    response.render("addCourse");
+    });
+
 
 app.get("/about", (request, response) => {
     response.render("about");
