@@ -81,6 +81,22 @@ body{
     text-decoration: underline;
 }
 
+.divForm p{
+    padding: 1%;
+    background-color: lightcoral;
+    margin-left: 10vw;
+    width: fit-content;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+#divP{
+    width: 100vw;
+}
+
+
+
 
 /*----------------------------Kurslista--------------------------------------*/
 
@@ -88,6 +104,7 @@ body{
     list-style: none;
     display: block;
     font-weight: 700;
+    padding: 1%;
 }
 
 .courseList ul {
@@ -107,7 +124,7 @@ body{
     width: 10vw;
 }
 
-#id:hover{
+.id:hover{
     background-color: rgb(250, 113, 113);
     text-decoration: underline;
 }

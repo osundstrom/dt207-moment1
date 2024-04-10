@@ -21,20 +21,20 @@
         <h1>Kurser</h1>
         <% courses.forEach(course => { %>
             <ul>
-                <hr>
-                <li>Kursnamn: <%= course.coursename %></li> <hr>
                 
-                <li>Kurskod: <%= course.coursecode %></li> <hr>
+                <li>Kursnamn: <%= course.coursename %></li> 
                 
-                <li>Länk: <a href="<%= course.syllabus %>">Kursplan</a></li> <hr>
+                <li>Kurskod: <%= course.coursecode %></li> 
+                
+                <li>Länk: <a href="<%= course.syllabus %>">Kursplan</a></li> 
             
-                <li>Progression: <%= course.progression %></li> <hr>
+                <li>Progression: <%= course.progression %></li>
 
-                <br>
+                
                 <li>
                     <form action="/deleteCourse" method="POST">
                        
-                        <button type="submit" id="id" name="id" value="<%= course.id %>">Radera</button>
+                        <button type="submit" class="id" name="id" value="<%= course.id %>">Radera</button>
                     </form>
                 </li>
             </ul>

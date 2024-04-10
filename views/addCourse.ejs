@@ -20,17 +20,23 @@
 
     <div class=divForm>
         <h1>Lägg till kurs</h1>
+        
+        
+        <% if (typeof error !== "undefined" && error !== null) { %> 
+            <div id="divP"> <p><%= error %></p> </div>
+        <% } %>
+        
         <form method="POST" action="/addCourse">
            
             <label for="coursecode">Kurskod:</label>
-            <input class="otherInput" type="text" id="coursecode" name="coursecode" required>
+            <input class="otherInput" type="text" id="coursecode" name="coursecode" >
 
             <label for="coursename">Kursnamn:</label>
-            <input class="otherInput" type="text" id="coursename" name="coursename" required>
+            <input class="otherInput" type="text" id="coursename" name="coursename" >
             
 
             <label for="syllabus">Länk:</label>
-            <input class="otherInput" type="text" id="syllabus" name="syllabus" required>
+            <input class="otherInput" type="text" id="syllabus" name="syllabus" >
             
             
             <label for="progression"></label>
@@ -43,6 +49,9 @@
         <input class="submitInput" type="submit" >
 
         </form>
+
+        
+       
     </div>
 
 </body>

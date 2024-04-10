@@ -139,25 +139,32 @@ app.post("/addCourse", (request, response) => {
     const progression = request.body.progression;
 
     
-   if (coursename != "" && coursecode != "" && syllabus != "" && progression != "") { //Måste skrivas i alla, alla skilda från tomt
-    connection.query("INSERT INTO kurser(coursename, coursecode, syllabus, progression) VALUES (?, ?, ?, ?)", //Insert
-    [coursename, coursecode, syllabus, progression], (err) => {
-        if (err) {
-            console.log("Failed insert " + err);
-            return; 
-        }
-        
+   if (!coursename || !coursecode || !syllabus  || !progression) { //Måste skrivas i alla, alla skilda från tomt
+    return response.render("addCourse", { error: "Fyll i samtliga fält" }); //på nytt med ett error meddelande
+            
 
+   }
+    connection.query("INSERT INTO kurser(coursename, coursecode, syllabus, progression) VALUES (?, ?, ?, ?)", //Insert
+    [coursename, coursecode, syllabus, progression], (error) => {
+        if (error) {
+            
+            return response.render("addCourse", { error: "Något gick fel" }); //annat error meddelande om något gick fel även om na uppfyllt kraven
+            
+        }
+
+        response.redirect("/addCourse"); //Uppdaterar så sidan uppdateras. om denna ej va med stod sidan bara o ladda. dastabsen uppdaerades men såg konstigt ut
+        
+        /*
         app.get("/index", (request, response) => {
             connection.query("SELECT * FROM kurser", (rows) => { //väljer i SQL
                 response.render("addCourse", {courses: rows}); //Renderar,visar det
                 
             });
             
-})})}
+})*/})}
 
-response.redirect("/addCourse"); //Uppdaterar så listan uppdateras. om denna ej va med stod sidan bara o ladda. dastabsen uppdaerades men såg konstigt ut
-});
+
+);
 
 
 
